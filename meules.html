@@ -155,14 +155,15 @@
 			let div = document.createElement("div");
 			div.style.left = io.x * io.scale + "px";
 			div.style.top = io.y * io.scale + "px";
-			div.style.width = io.radius * 2 * io.scale + "px";
-			div.style.height = io.radius * 2 * io.scale + "px";
+			div.style.width = io.radius * 10 * io.scale + "px";
+			div.style.height = 1 + "px";
 			div.style.marginLeft = -io.radius * io.scale + "px";
 			div.style.marginTop = -io.radius * io.scale + "px";
 			div.style.background = io.color;
 			div.style.opacity = io.a;
-			div.style.borderRadius = "50%";
+			div.style.borderRadius = "0";
 			div.style.position = "fixed";
+			div.style.transform = "rotate(" + Math.random()*180 + "deg)";
 
 			document.body.appendChild(div);
 		}
@@ -171,8 +172,8 @@
 		function build(stage) {
 
 			let rules = {
-				sizes: [4, 8, 16],
-				maxTries: 1000000,
+				sizes: [2],
+				maxTries: 10000,
 				maxItems: 1500,
 				circle: false,
 				colors: ["#fff"]
